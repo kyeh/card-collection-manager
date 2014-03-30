@@ -1,28 +1,38 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to the Card Collection Manager application. The purpose of this application to allow trading card collection owners to easily manage their trading card collections online.
 
-Things you may want to cover:
+How to setup the application:
 
-* Ruby version
+* make sure you set up the secret key for your rails application
 
-* System dependencies
+* make sure you set up the database.yml file for your rails application
 
-* Configuration
+== Set up the secret key for rails
 
-* Database creation
+The project is configured using the dotenv gem to manage appication environment variables. You won't be able to run the rails server until you give your application a 'SECRET_KEY_BASE'. This is loaded in the file /config/initializers/secret_token.rb
 
-* Database initialization
+To set this variable, execute the command <tt>rake secret</tt> in your command line. This will generate a random key string. Create a .env file in the root project directory, and include this line: 
 
-* How to run the test suite
+<tt>SECRET_KEY_BASE=(yoursecretkeyhere)</tt>
 
-* Services (job queues, cache servers, search engines, etc.)
+== Set up the database.yml
 
-* Deployment instructions
+The project by default uses the postgresql gem to persist data. Create a file in your /config directory called database.yml and include your database configuration details. An example looks like this:
 
-* ...
+<tt>
+development:
+  adapter: postgresql
+  database: my_dev_db
+  pool: 5
+  timeout: 5000
 
+test:
+  adapter: postgresql
+  database: my_test_db
+  pool: 5
+  timeout: 5000
+</tt>
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
