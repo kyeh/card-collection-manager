@@ -20,6 +20,7 @@ To set this variable, execute the command <tt>rake secret</tt> in your command l
 
 The project by default uses the postgresql gem to persist data. Create a file in your /config directory called database.yml and include your database configuration details. An example looks like this:
 
+```
 	development:
   	adapter: postgresql
   	database: my_dev_db
@@ -31,6 +32,4 @@ The project by default uses the postgresql gem to persist data. Create a file in
   	database: my_test_db
   	pool: 5
   	timeout: 5000
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+```
